@@ -4,7 +4,7 @@ struct Unk_SetForegroundWindow
 {
 	static BOOL __stdcall thunk(HWND hWnd)
 	{
-		auto hIcon = LoadImage(NULL, L"Data\\SKSE\\Plugins\\CustomWindow.ico", IMAGE_ICON, 32, 32, LR_LOADFROMFILE);
+		auto hIcon = LoadImageW(NULL, L"Data\\SKSE\\Plugins\\CustomWindow.ico", IMAGE_ICON, 32, 32, LR_LOADFROMFILE);
 		if (hIcon) {
 			logger::info("Replacing window icon");
 			SendMessage(hWnd, WM_SETICON, ICON_SMALL, (LPARAM)hIcon);
